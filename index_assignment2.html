@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <style>
+    .no-borders,
+    .no-borders th,
+    .no-borders td {
+      border: none !important;
+    }
+    .tight-rows th,
+    .tight-rows td {
+      padding: 1px !important;
+    }
+    .nav-link {
+      color: black !important;
+    }
+    .button-container {
+      display: flex;
+      gap: 10px;
+    }
+    .row.gx-2 {
+      --bs-gutter-x: -20rem;
+    }
+  </style>
+</head>
+<body style="background-color:aliceblue">
+
+<!-- navbar -->
+<div class="container-fluid" style="background-color: white; margin-bottom: 20px"> 
+  <div class="container" style="background-color: white; margin-bottom: 20px;">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">PRODUCT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">GALLERY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">BLOG</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">INVENTORY</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- profile -->
+<div class="container" style="background-color: white; margin-bottom: 50px; margin-top: 50px; padding-top: 20px; padding-left: 0px;">
+  <div class="row gx-2">
+    <div class="col col-first" style="margin-left: -100px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Telkomsel_2021_icon.svg/1491px-Telkomsel_2021_icon.svg.png" alt="Telkomsel" width="200" height="130">
+    </div>
+    <div class="col col-second">
+      <div style="padding-left: 10px; padding-right: 50px;">
+        <h3 id="profile-name">Nama Anda</h3>
+        <h7 id="profile-role" style="margin-bottom: 10px; display: inline-block;">Front End Developer</h7>
+        <br>
+        <div class="button-container">
+          <a href="#"><button class="button" style="color: white; background-color: blue;">kontak</button></a>
+          <a href="#"><button class="button" style="border: 2px solid #04AA6D; color: green;">resume</button></a>
+          <button class="button" style="border: 2px solid #04AA6D; color: orange;" onclick="TampilkanData()">edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="col col-third">
+      <table class="table text-left no-borders tight-rows">
+        <tbody>
+          <tr>
+            <th scope="row"><b>Availability</b></th>
+            <td id="profile-availability">Full time</td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Usia</b></th>
+            <td id="profile-age">19</td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Lokasi</b></th>
+            <td id="profile-location">Jakarta</td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Pengalaman</b></th>
+            <td id="profile-experience">2 Tahun</td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Email</b></th>
+            <td id="profile-email">email@gmail.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Form -->
+<div class="container" style="background-color: white; display: none;" id="profile-form-container">
+  <form id="profile-form" onsubmit="UpdateData(event)">
+    <div class="mb-3">
+      <label for="inputName" class="form-label"><b>Nama</b></label>
+      <input type="text" class="form-control" id="inputName" placeholder="masukkan nama anda">
+    </div>
+    <div class="mb-3">
+      <label for="inputRole" class="form-label"><b>Role</b></label>
+      <input type="text" class="form-control" id="inputRole">
+    </div>
+    <div class="mb-3">
+      <label for="inputAvailability" class="form-label"><b>Availability</b></label>
+      <input type="text" class="form-control" id="inputAvailability">
+    </div>
+    <div class="mb-3">
+      <label for="inputAge" class="form-label"><b>Usia</b></label>
+      <input type="text" class="form-control" id="inputAge">
+    </div>
+    <div class="mb-3">
+      <label for="inputLocation" class="form-label"><b>Lokasi</b></label>
+      <input type="text" class="form-control" id="inputLocation">
+    </div>
+    <div class="mb-3">
+      <label for="inputExperience" class="form-label"><b>Years of Experience</b></label>
+      <input type="text" class="form-control" id="inputExperience">
+    </div>
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label"><b>Email</b></label>
+      <input type="email" class="form-control" id="inputEmail">
+    </div>
+    <!-- button -->
+    <button type="submit" class="btn btn-primary w-100 mb-4" style="background-color: green;">Submit</button>
+  </form>
+</div>
+
+<script src="script_assignment2.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
